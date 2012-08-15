@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE MudletPackage>
+<MudletPackage version="1.0">
+    <ScriptPackage>
+        <Script isActive="yes" isFolder="no">
+            <name>Xyllomer Mudlet Package</name>
+            <packageName></packageName>
+            <script>-------------------------------------------------
+--         Xyllomer Mudlet Package             --
+--                                             --
+-- report problems to miraculix@xyllomer.de    --
+-------------------------------------------------
+
+
+mudlet = mudlet or {}
+-- let mudlet know we are a mapper script ....
+mudlet.mapper_script = true
+
+if not xyllomer then dofile(getMudletHomeDir()..&quot;/Xyllomer/scripts/globals.lua&quot; ) end</script>
+            <eventHandlerList/>
+        </Script>
+    </ScriptPackage>
+<KeyPackage>
+        <KeyGroup isActive="yes" isFolder="yes">
+            <name>Xyllomer Keypad Navigation</name>
+            <packageName></packageName>
+            <script></script>
+            <command></command>
+            <keyCode>-1</keyCode>
+            <keyModifier>-1</keyModifier>
+            <Key isActive="yes" isFolder="no">
+                <name>North</name>
+                <packageName></packageName>
+                <script></script>
+                <command>n</command>
+                <keyCode>56</keyCode>
+                <keyModifier>536870912</keyModifier>
+            </Key>
+            <Key isActive="yes" isFolder="no">
+                <name>South</name>
+                <packageName></packageName>
+                <script></script>
+                <command>s</command>
+                <keyCode>50</keyCode>
+                <keyModifier>536870912</keyModifier>
+            </Key>
+            <Key isActive="yes" isFolder="no">
+                <name>East</name>
+                <packageName></packageName>
+                <script></script>
+                <command>e</command>
+                <keyCode>54</keyCode>
+                <keyModifier>536870912</keyModifier>
+            </Key>
+            <Key isActive="yes" isFolder="no">
+                <name>West</name>
+                <packageName></packageName>
+                <script></script>
+                <command>w</command>
+                <keyCode>52</keyCode>
+                <keyModifier>536870912</keyModifier>
+            </Key>
+            <Key isActive="yes" isFolder="no">
+                <name>Northeast</name>
+                <packageName></packageName>
+                <script></script>
+                <command>ne</command>
+                <keyCode>57</keyCode>
+                <keyModifier>536870912</keyModifier>
+            </Key>
+            <Key isActive="yes" isFolder="no">
+                <name>Northwest</name>
+                <packageName></packageName>
+                <script></script>
+                <command>nw</command>
+                <keyCode>55</keyCode>
+                <keyModifier>536870912</keyModifier>
+            </Key>
+            <Key isActive="yes" isFolder="no">
+                <name>Southeast</name>
+                <packageName></packageName>
+                <script></script>
+                <command>se</command>
+                <keyCode>51</keyCode>
+                <keyModifier>536870912</keyModifier>
+            </Key>
+            <Key isActive="yes" isFolder="no">
+                <name>Southwest</name>
+                <packageName></packageName>
+                <script></script>
+                <command>sw</command>
+                <keyCode>49</keyCode>
+                <keyModifier>536870912</keyModifier>
+            </Key>
+            <Key isActive="yes" isFolder="no">
+                <name>Up</name>
+                <packageName></packageName>
+                <script></script>
+                <command>u</command>
+                <keyCode>45</keyCode>
+                <keyModifier>536870912</keyModifier>
+            </Key>
+            <Key isActive="yes" isFolder="no">
+                <name>Down</name>
+                <packageName></packageName>
+                <script></script>
+                <command>d</command>
+                <keyCode>43</keyCode>
+                <keyModifier>536870912</keyModifier>
+            </Key>
+            <Key isActive="yes" isFolder="no">
+                <name>Look</name>
+                <packageName></packageName>
+                <script></script>
+                <command>l</command>
+                <keyCode>53</keyCode>
+                <keyModifier>536870912</keyModifier>
+            </Key>
+        </KeyGroup>
+    </KeyPackage>    
+</MudletPackage>
