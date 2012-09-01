@@ -110,13 +110,6 @@ end
 
  
 function xyllomer.map:ConvertRoomNumberToID(room_num)
-    local _id = getRoomIDbyHash( tostring(room_num) )
+    return room_num;
     
-    if ( _id == -1 ) then
-          xyllomer.log:debug("Unseen RoomID "..room_num);
-         _id = createRoomID()
-         setRoomIDbyHash( _id, tostring(room_num) )
-    end
-    xyllomer.log:debug("Convert: "..room_num.." is ".._id);
-    return _id;
 end

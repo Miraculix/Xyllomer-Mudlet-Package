@@ -5,7 +5,7 @@ if ( not xyllomer_triggers_set ) then
     xyllomer.log:info("Setting triggers");
     xyllomer_triggers_set = true
 
-    if ( xyllomer_Debug ) then
+    if ( xyllomer_Develop ) then
         tempAlias( "^xyllua (.*)$" , [[ local f,e = loadstring("return "..matches[2])
         if not f then
 	        f,e = assert(loadstring(matches[2]))
@@ -20,7 +20,7 @@ tempAlias( "^xyldebug$" , [[
         xyllomer_Debug = false;
         xyllomer.log:info("Debugging disabled.");
     else
-        xyllomer_Debug = false;
+        xyllomer_Debug = true;
         xyllomer.log:info("Debugging enabled.");
     end 
        

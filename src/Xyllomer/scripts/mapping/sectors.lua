@@ -4,8 +4,7 @@ function xyllomer.map:registerEnvColor(envid, r,g,b,a)
     if ( envid == nil ) then
         return;
     end     
-    setCustomEnvColor(envid, r,g,b, 255 );
-    xyllomer.log:debug(envid)
+    setCustomEnvColor(envid, r,g,b, 255 );   
 end
 
 

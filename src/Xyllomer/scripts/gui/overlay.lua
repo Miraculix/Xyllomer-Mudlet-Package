@@ -14,8 +14,6 @@ setBackgroundImage("heading", xyllomer_gfx_path .. sep .. "heading.png" );
 setBackgroundColor("heading", 0,0,0,0);
 moveWindow("heading",0,0)
 
-
-
 local topFillerName = "topFiller";
 local startPos = 240;
 for i = 1,8 do
@@ -28,8 +26,11 @@ for i = 1,8 do
 	startPos = startPos + 264
 end
 
-createLabel( "left-side", 0,0,135,465,1 )
-moveWindow("left-side",  0,map_height+34)
-setBackgroundImage( "left-side", xyllomer_gfx_path ..  sep .. "left-new.png" );
-setBackgroundColor( "left-side", 0, 0, 0, 0 );
+if ( xyllomer_ui_show_compass ) then
+    createLabel( "left-side", 0,0,135,465,1 )
+    moveWindow("left-side",  0,xyllomer_ui_compass_top+34)
+    setBackgroundImage( "left-side", xyllomer_gfx_path ..  sep .. "left-new.png" );
+    setBackgroundColor( "left-side", 0, 0, 0, 0 );
+end
+
 end

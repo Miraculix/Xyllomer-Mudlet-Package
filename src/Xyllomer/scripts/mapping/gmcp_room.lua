@@ -21,6 +21,16 @@ function xyllomer.map:parseGmcpRoom()
      centerview(xyllomer.map.unmapped_room_id);
      return;
   end
+  if ( gmcp.Room.Info.num == 0 ) then
+     xyllomer.log:debug("entering unmapped room...ignoring.");
+     centerview(xyllomer.map.unmapped_room_id);
+     return;
+  end
+  if ( gmcp.Room.Info.coord.x == '0' and gmcp.Room.Info.coord.y == '0' and gmcp.Room.Info.coord.z == '0') then
+     xyllomer.log:debug("entering unmapped room...ignoring.");
+     centerview(xyllomer.map.unmapped_room_id);
+     return;
+  end
   --xyllomer.log:debug("M1");
   room_id = xyllomer.map:ConvertRoomNumberToID(gmcp.Room.Info.num)
  

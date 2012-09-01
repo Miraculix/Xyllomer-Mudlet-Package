@@ -1,8 +1,8 @@
 xyllomer = xyllomer or {}
 xyllomer.log = xyllomer.log or {} 
 
-xyllomer_package_version = "0.3 alpha"
-xyllomer_package_date = "2012/08/15"
+xyllomer_package_version = "0.4 alpha"
+xyllomer_package_date = "2012/08/31"
 
 xyllomer_base_path = getMudletHomeDir().."/Xyllomer"
 
@@ -14,12 +14,18 @@ xyllomer_profile_path = getMudletHomeDir()
 
 -- disable debug infos by default
 xyllomer_Debug = false
+xyllomer_Develop = false
 
 -- Autosave Maps all 5 minutes
 xyllomer_MapAutosave_Interval = 300
 
 -- Automatically create mapper window
 xyllomer_AutoCreate_Mapper = true
+
+-- determine the size of your screen
+WindowWidth=0;
+WindowHeight=0;
+WindowWidth, WindowHeight = getMainWindowSize();
 
 dofile(xyllomer_scripts_path .."/logger.lua")
 

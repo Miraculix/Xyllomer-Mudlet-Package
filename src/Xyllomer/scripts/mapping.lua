@@ -20,7 +20,8 @@ lfs = lfs or {}
   xyllomer.map.prior_room_data = {}
   xyllomer.map.seen_room = nil
   xyllomer.map.mapdir = getMudletHomeDir().."/xyllomer_map"
-    
+  xyllomer.map.moved = 0
+  
   lfs.mkdir( xyllomer.map.mapdir );
   
   if not xyllomer.map.terrain then
@@ -36,6 +37,7 @@ lfs = lfs or {}
   
   function xyllomer_onRoom()
     xyllomer.log:debug("Got roominfo");
+    xyllomer.map.moved = 1
     xyllomer.map:parseGmcpRoom()
   end
   
@@ -46,8 +48,13 @@ lfs = lfs or {}
   end
     
   function xyllomer_SaveTimer()
-    saveMap(xyllomer.map.mapdir .. "/xyllomer_map.dat");
-    xyllomer.log:info("Map autosave.");
+    if ( xyllomer.map.moved == 0) then
+        xyllomer.log:debug("Map autosave ommited (not moved).");
+    else
+        saveMap(xyllomer.map.mapdir .. "/xyllomer_map.dat");
+        xyllomer.log:info("Map autosave.");
+    end
+    xyllomer.map.moved = 0
     tempTimer(xyllomer_MapAutosave_Interval,function() xyllomer_SaveTimer(); end );
   end
 
@@ -65,8 +72,8 @@ lfs = lfs or {}
   end
   
   if ( xyllomer_AutoCreate_Mapper ) then
-    createMapper( WindowWidth - 400 , 0 , 400 , (WindowHeight / 2) - 10 );
-    setBorderRight(400);
+    createMapper( WindowWidth - xyllomer_ui_mapper_width , 0 , xyllomer_ui_mapper_width , xyllomer_ui_mapper_height );
+    setBorderRight(xyllomer_ui_mapper_width);
   end
   
   if ( xyllomer:FileExists(xyllomer.map.mapdir .. "/xyllomer_map.dat") ) then

@@ -2,11 +2,10 @@ xyllomer = xyllomer or {}
 xyllomer.log = xyllomer.log or {}
 xyllomer.gui = xyllomer.gui or {}
 
-
-
 function xyllomer.gui:create_gauges()
 -- gauges
-local offset = 34+map_height+348-90
+local offset = 34+xyllomer_ui_compass_top+348-90
+
 createLabel("xpMax",0,0,0,0,1);
 setBackgroundColor("xpMax",32,124,215,255)
 createLabel("xpBar",0,0,0,0,1);
@@ -47,10 +46,10 @@ moveWindow("enduranceMax", 22,offset+55)
 createLabel("willpowerMax",0,0,0,0,1);
 createLabel("willpowerBar",0,0,0,0,1);
 setBackgroundColor("willpowerMax",153,102,204,255)
-
 setBackgroundColor("willpowerBar",153,102,204,100)
 moveWindow("willpowerBar", 22,offset+70)
 resizeWindow("willpowerBar",55,10)
 moveWindow("willpowerMax", 22,offset+70)
 resizeWindow("willpowerMax",55,10)
 end
+
