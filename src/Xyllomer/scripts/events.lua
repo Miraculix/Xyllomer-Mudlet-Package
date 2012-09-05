@@ -113,3 +113,7 @@ end
 registerAnonymousEventHandler("gmcp.Char.Vitals", "xyllomer_onVitals")
 registerAnonymousEventHandler("gmcp.Room.Info", "xyllomer_onExits")
 registerAnonymousEventHandler("sysDataSendRequest","xyllomer_onSysDataSendRequest")
+
+if ( xyllomer_ui_show_team ) then
+    registerAnonymousEventHandler("gmcp.Char.Team","xyllomer_got_teaminfo")
+end
